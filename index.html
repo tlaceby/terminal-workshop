@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+</head>
+<body>
+    <section>
+        <input type="text" id="terminal-el" placeholder="Type a command...">
+    
+        <div id="output-el"></div>
+    </section>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+    
+        section {
+            background-color: #1e1e1e;
+            color: #eee;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+        }
+    
+        #terminal-el {
+            width: 100%;
+            max-width: 75vw;
+            background-color: #252526;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+    
+        #terminal-el:focus {
+            outline: none;
+        }
+    
+        #output-el {
+            width: 100%;
+            max-width: 75vw;
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+    
+        #output-el p {
+            margin: 0;
+            padding: 3px 0;
+            word-wrap: break-word;
+        }
+    
+        #output-el p.command {
+            outline: none;
+        }
+
+        .error {
+            color: rgb(255, 145, 71);
+            font-weight: bold;
+            padding-right: 10px;
+        }
+    </style>
+    
+
+    <script src="./main.js" defer></script>
+</body>
+</html>
