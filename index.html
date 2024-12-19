@@ -1,80 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal</title>
-</head>
-<body>
-    <section>
-        <input type="text" id="terminal-el" placeholder="Type a command...">
-    
-        <div id="output-el"></div>
-    </section>
-    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Terminal</title>
+        <script src="./index.js" defer></script>
+    </head>
+    <body>
+        <div class="terminal" id="terminal">
+            <div class="output" id="output">
+                <p class="row">Welcome to the terminal!</p>
+            </div>
+
+            <input id="prompt" placeholder="$: Enter command here..." />
+        </div>
+    </body>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
+        html,
+        body {
+            width: 100%;
+            height: 100%;
         }
-    
-        section {
-            background-color: #1e1e1e;
-            color: #eee;
-            height: 100vh;
+
+        * {
+            box-sizing: border-box;
+
+            width: 100%;
+            color: green;
+
+            font-size: 1.3rem;
+            transition: font-size 2s;
+        }
+
+        .terminal {
+            height: 100%;
+
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 20px;
-        }
-    
-        #terminal-el {
-            width: 100%;
-            max-width: 75vw;
-            background-color: #252526;
-            border: none;
-            border-radius: 4px;
-            color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-    
-        #terminal-el:focus {
-            outline: none;
-        }
-    
-        #output-el {
-            width: 100%;
-            max-width: 75vw;
-            background-color: #1e1e1e;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-y: auto;
-            max-height: 80vh;
-        }
-    
-        #output-el p {
-            margin: 0;
-            padding: 3px 0;
-            word-wrap: break-word;
-        }
-    
-        #output-el p.command {
-            outline: none;
+            justify-content: space-between;
+
+            /* give terminal extra padding */
+            padding: 1rem 0.5rem;
         }
 
-        .error {
-            color: rgb(255, 145, 71);
-            font-weight: bold;
-            padding-right: 10px;
+        .output {
+            overflow: scroll;
+
+            font-family: "Courier New", monospace;
+        }
+
+        .output p {
+            margin: 0;
+        }
+
+        input {
+            background: none;
+            border: 1px solid green;
+            outline: none;
+
+            padding: 10px 15px;
+            color: white;
+        }
+
+        body {
+            background: #010c1f;
         }
     </style>
-    
-
-    <script src="./main.js" defer></script>
-</body>
 </html>
